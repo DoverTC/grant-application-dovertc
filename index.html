@@ -1,0 +1,207 @@
+<!DOCTYPE html> <html lang="en"> 
+    <head> <meta charset="UTF-8" /> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
+        <title>Grant Application Form</title> 
+        <script src="https://cdn.tailwindcss.com"></script> 
+    </head> 
+    <body class="bg-gray-100 py-10 px-4"> 
+        <div class="max-w-3xl mx-auto bg-white p-8 rounded shadow"> 
+            <h1 class="text-3xl font-bold mb-6">Dover Town Council Grant Application</h1>
+<form id="grantForm">
+<!-- Section A -->
+<div class="mb-6">
+  <h2 class="text-xl font-semibold mb-2">Section A: Date of Application</h2>
+  <p class="text-sm text-gray-600 mb-2">Date this application was written and signed.</p>
+  <input type="date" name="applicationDate" class="w-full p-2 border rounded" required />
+</div>
+
+<!-- Section B -->
+<div class="mb-6">
+  <h2 class="text-xl font-semibold mb-2">Section B: Applicant Details</h2>
+  <p class="text-sm text-gray-600 mb-2">Enter the name, address, and organisation applying for this funding.</p>
+  <input type="text" name="fullName" placeholder="Full Name" class="w-full p-2 border rounded mb-2" required />
+  <input type="text" name="address" placeholder="Address" class="w-full p-2 border rounded mb-2" required />
+  <input type="text" name="organisation" placeholder="Organisation Name" class="w-full p-2 border rounded" required />
+</div>
+
+<!-- Section C -->
+<div class="mb-6">
+  <h2 class="text-xl font-semibold mb-2">Section C: Charity Number</h2>
+  <p class="text-sm text-gray-600 mb-2">Enter your charity number if applicable.</p>
+  <input type="text" name="charityNumber" placeholder="Charity Number (if applicable)" class="w-full p-2 border rounded" />
+</div>
+
+<!-- Section D -->
+<div class="mb-6">
+  <h2 class="text-xl font-semibold mb-2">Section D: Project Description</h2>
+  <p class="text-sm text-gray-600 mb-2">Tell us about the project or activity this funding will support (up to 500 words).</p>
+  <textarea name="projectDescription" rows="5" class="w-full p-2 border rounded" required></textarea>
+</div>
+
+<!-- Section E -->
+<div class="mb-6">
+  <h2 class="text-xl font-semibold mb-2">Section E: Budget Breakdown</h2>
+  <p class="text-sm text-gray-600 mb-2">List what you will spend the funding on. Add cost for each item. You may request up to £500 in total.</p>
+  <div id="budgetItems" class="space-y-2 mb-2"></div>
+  <button type="button" onclick="addBudgetItem()" class="mb-4 px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700">+ Add Item</button>
+  <input type="number" name="totalRequested" placeholder="Total Funding Requested (£)" class="w-full p-2 border rounded" required />
+</div>
+
+<!-- Section F -->
+<div class="mb-6">
+  <h2 class="text-xl font-semibold mb-2">Section F: Event Details</h2>
+  <p class="text-sm text-gray-600 mb-2">Enter the date(s) and location of your event/project including postcode.</p>
+  <input type="text" name="eventDate" placeholder="Date or dates" class="w-full p-2 border rounded mb-2" required />
+  <input type="text" name="eventLocation" placeholder="Location and postcode" class="w-full p-2 border rounded" required />
+</div>
+
+<!-- Section G -->
+<div class="mb-6">
+  <h2 class="text-xl font-semibold mb-2">Section G: Community Benefit</h2>
+  <p class="text-sm text-gray-600 mb-2">Explain how your event/project will benefit those living or working in Dover.</p>
+  <textarea name="communityBenefit" rows="4" class="w-full p-2 border rounded" required></textarea>
+</div>
+
+<!-- Section H -->
+<div class="mb-6">
+  <h2 class="text-xl font-semibold mb-2">Section H: Beneficiaries</h2>
+  <p class="text-sm text-gray-600 mb-2">How many Dover residents will benefit and how will you count them?</p>
+  <input type="number" name="beneficiariesCount" placeholder="Estimated number of beneficiaries" class="w-full p-2 border rounded mb-2" required />
+  <textarea name="beneficiariesMethod" rows="3" class="w-full p-2 border rounded" placeholder="How will you count/estimate?" required></textarea>
+</div>
+
+<!-- Section I -->
+<div class="mb-6">
+  <h2 class="text-xl font-semibold mb-2">Section I: Contact Information</h2>
+  <p class="text-sm text-gray-600 mb-2">Contact details of the person completing this application.</p>
+  <input type="text" name="contactName" placeholder="Your Name" class="w-full p-2 border rounded mb-2" required />
+  <input type="tel" name="contactPhone" placeholder="Telephone Number" class="w-full p-2 border rounded mb-2" required />
+  <input type="email" name="contactEmail" placeholder="Email Address" class="w-full p-2 border rounded" required />
+</div>
+
+<!-- Section J -->
+<div class="mb-6">
+  <h2 class="text-xl font-semibold mb-2">Section J: Bank Details</h2>
+  <p class="text-sm text-gray-600 mb-2">Provide the bank account details for the payment.</p>
+  <input type="text" name="bankName" placeholder="Name on Account" class="w-full p-2 border rounded mb-2" required />
+  <input type="text" name="sortCode" placeholder="Sort Code" class="w-full p-2 border rounded mb-2" required />
+  <input type="text" name="accountNumber" placeholder="Account Number" class="w-full p-2 border rounded" required />
+</div>
+
+<!-- Section K -->
+<div class="mb-6">
+  <h2 class="text-xl font-semibold mb-2">Section K: Supporting Signatures</h2>
+  <p class="text-sm text-gray-600 mb-2">Please name two Dover Town Councillors who support this application. Signatures will be collected separately.</p>
+  <input type="text" name="councillor1" placeholder="Name of Dover Town Councillor 1" class="w-full p-2 border rounded mb-2" required />
+  <input type="text" name="councillor2" placeholder="Name of Dover Town Councillor 2" class="w-full p-2 border rounded mb-2" required />
+</div>
+
+<!-- Section L -->
+<div class="mb-6">
+  <h2 class="text-xl font-semibold mb-2">Section L: Declaration</h2>
+  <p class="text-sm text-gray-600 mb-4">Please confirm the following before submission:</p>
+  <input type="text" name="declarationName" placeholder="Full name of the person declaring" class="w-full p-2 border rounded mb-4" required />
+  <ul class="list-disc list-inside text-sm text-gray-700 space-y-2 mb-4">
+    <li>The information in this application is true.</li>
+    <li>I am authorised to apply for this grant funding on behalf of the organisation named on this form.</li>
+    <li>Funding is not being provided from any other source (including income, government funding, or other grants) for the items listed in Section E.</li>
+    <li>I will ensure Dover Town Council’s contribution is publicised by the organisation (e.g., via social media, printed materials, radio/TV, or word-of-mouth).</li>
+    <li>I understand that if the funding is not used on the agreed items/event/project, or receipts are not provided, or if the application is found to be fraudulent, then I and the trustees/directors/committee members will be liable to repay the funding to Dover Town Council on demand.</li>
+  </ul>
+  <input type="date" name="declarationDate" class="w-full p-2 border rounded mb-4" required />
+</div>
+
+
+
+<!-- Submit -->
+<div class="mt-10">
+  <button type="submit" class="bg-blue-700 text-white px-6 py-3 rounded text-lg hover:bg-blue-800">
+    Request to Sign via DocuSign
+  </button>
+  <p class="mt-2 text-sm text-gray-600">By clicking this button, you will be redirected to complete and sign your application via DocuSign.</p>
+</div>
+</form>
+
+</div> <script> function addBudgetItem() { const container = document.getElementById('budgetItems'); 
+const div = document.createElement('div'); 
+div.className = 'flex gap-2 items-center mb-2'; 
+div.innerHTML = ` <input type="text" name="budgetItemDescription[]" placeholder="Item description" class="flex-1 p-2 border rounded" required /> <input type="number" name="budgetItemCost[]" placeholder="Cost" class="w-32 p-2 border rounded" required /> <button type="button" onclick="this.parentElement.remove()" class="text-red-600 text-xl font-bold hover:text-red-800">&times;</button> `; 
+container.appendChild(div); } </script> 
+<script>
+  // Save input and textarea values on change
+  document.addEventListener("DOMContentLoaded", () => {
+    const fields = document.querySelectorAll("input, textarea");
+
+    fields.forEach(field => {
+      const savedValue = localStorage.getItem(field.name);
+      if (savedValue) {
+        field.value = savedValue;
+      }
+
+      field.addEventListener("input", () => {
+        localStorage.setItem(field.name, field.value);
+      });
+    });
+  });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const form = document.querySelector("form");
+    const submitBtn = form.querySelector("button[type='submit']");
+
+    // Add error box if not already present
+    const errorBox = document.createElement("div");
+    errorBox.className = "bg-red-100 text-red-700 p-3 mb-4 rounded hidden";
+    errorBox.innerText = "Please complete all required fields before submitting.";
+    form.insertBefore(errorBox, form.firstChild);
+
+    form.addEventListener("submit", function (e) {
+      const invalidFields = form.querySelectorAll(":invalid");
+      if (invalidFields.length > 0) {
+        e.preventDefault();
+        errorBox.classList.remove("hidden");
+
+        // Scroll to first invalid field
+        invalidFields[0].scrollIntoView({ behavior: "smooth", block: "center" });
+
+        // Optionally, visually flag them
+        invalidFields.forEach(field => {
+          field.classList.add("border-red-500");
+        });
+
+        return false;
+      }
+    });
+
+    // Clear red border on input
+    form.querySelectorAll("input, textarea, select").forEach(el => {
+      el.addEventListener("input", () => {
+        el.classList.remove("border-red-500");
+      });
+    });
+  });
+</script>
+<script>
+  document.getElementById("grantForm").addEventListener("submit", function (e) {
+    e.preventDefault(); // stop actual submit
+
+    if (!this.checkValidity()) {
+      this.reportValidity(); // show built-in browser validation
+      return;
+    }
+
+    // Collect key data for DocuSign URL
+    const fullName = encodeURIComponent(this.fullName.value);
+    const email = encodeURIComponent(this.contactEmail.value);
+
+    // Replace with your actual DocuSign PowerForm URL
+    const docusignURL = `https://powerform.docusign.net/xyz123?FullName=${fullName}&Email=${email}`;
+    
+    window.location.href = docusignURL;
+  });
+</script>
+
+
+</body> 
+</html>
