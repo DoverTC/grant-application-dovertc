@@ -27,21 +27,22 @@
 <!-- Section C -->
 <div class="mb-6">
   <h2 class="text-xl font-semibold mb-2">Section C: Charity Number</h2>
-  <p class="text-sm text-gray-600 mb-2">Enter your charity number if applicable.</p>
+  <p class="text-sm text-gray-600 mb-2">Enter your charity number if applicable. Company number is not required.</p>
   <input type="text" name="charityNumber" placeholder="Charity Number (if applicable)" class="w-full p-2 border rounded" />
 </div>
 
 <!-- Section D -->
 <div class="mb-6">
   <h2 class="text-xl font-semibold mb-2">Section D: Project Description</h2>
-  <p class="text-sm text-gray-600 mb-2">Tell us about the project or activity this funding will support (up to 500 words).</p>
+  <p class="text-sm text-gray-600 mb-2">Tell us about the project/event/activity which this funding will make possible (up to 500 words).</p>
   <textarea name="projectDescription" rows="5" class="w-full p-2 border rounded" required></textarea>
 </div>
 
 <!-- Section E -->
 <div class="mb-6">
   <h2 class="text-xl font-semibold mb-2">Section E: List what you will spend the funding on.</h2>
-  <p class="text-sm text-gray-600 mb-2">Add cost for each item. You may request up to £500 in total.</p>
+  <p class="text-sm text-gray-600 mb-2">List in detail what you will spend the money on. Please put cost against each item (up to 500 words). 
+Give a total  (up to £500) for how much funding you are applying for.</p>
   <div id="budgetItems" class="space-y-2 mb-2"></div>
   <button type="button" onclick="addBudgetItem()" class="mb-4 px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700">+ Add Item</button>
   <input type="number" name="totalRequested" placeholder="Total Funding Requested (£)" class="w-full p-2 border rounded" required />
@@ -50,7 +51,7 @@
 <!-- Section F -->
 <div class="mb-6">
   <h2 class="text-xl font-semibold mb-2">Section F: Event Details</h2>
-  <p class="text-sm text-gray-600 mb-2">Enter the date(s) and location of your event/project including postcode.</p>
+  <p class="text-sm text-gray-600 mb-2">Enter the date(s) and location of your event/project/activity including postcode.</p>
   <input type="text" name="eventDate" placeholder="Date or dates" class="w-full p-2 border rounded mb-2" required />
   <input type="text" name="eventLocation" placeholder="Location and postcode" class="w-full p-2 border rounded" required />
 </div>
@@ -58,14 +59,14 @@
 <!-- Section G -->
 <div class="mb-6">
   <h2 class="text-xl font-semibold mb-2">Section G: Community Benefit</h2>
-  <p class="text-sm text-gray-600 mb-2">Explain how your event/project will benefit those living or working in Dover.</p>
+  <p class="text-sm text-gray-600 mb-2">How will your event/project/activity benefit people who live or work in the THE TOWN OF DOVER (see map in guidance)</p>
   <textarea name="communityBenefit" rows="4" class="w-full p-2 border rounded" required></textarea>
 </div>
 
 <!-- Section H -->
 <div class="mb-6">
   <h2 class="text-xl font-semibold mb-2">Section H: Beneficiaries</h2>
-  <p class="text-sm text-gray-600 mb-2">How many Dover residents will benefit and how will you count them?</p>
+  <p class="text-sm text-gray-600 mb-2">How many residents of Dover will benefit from this grant funding and how will you count them?</p>
   <input type="number" name="beneficiariesCount" placeholder="Estimated number of beneficiaries" class="w-full p-2 border rounded mb-2" required />
   <textarea name="beneficiariesMethod" rows="3" class="w-full p-2 border rounded" placeholder="How will you count/estimate?" required></textarea>
 </div>
@@ -73,7 +74,7 @@
 <!-- Section I -->
 <div class="mb-6">
   <h2 class="text-xl font-semibold mb-2">Section I: Contact Information</h2>
-  <p class="text-sm text-gray-600 mb-2">Contact details of the person completing this application.</p>
+  <p class="text-sm text-gray-600 mb-2">Name, Tel no & email address of the person who is completing this application. You will be contacted if there are any questions and notified whether the application has been successful.</p>
   <input type="text" name="contactName" placeholder="Your Name" class="w-full p-2 border rounded mb-2" required />
   <input type="tel" name="contactPhone" placeholder="Telephone Number" class="w-full p-2 border rounded mb-2" required />
   <input type="email" name="contactEmail" placeholder="Email Address" class="w-full p-2 border rounded" required />
@@ -82,7 +83,7 @@
 <!-- Section J -->
 <div class="mb-6">
   <h2 class="text-xl font-semibold mb-2">Section J: Bank Details</h2>
-  <p class="text-sm text-gray-600 mb-2">Provide the bank account details for the payment.</p>
+  <p class="text-sm text-gray-600 mb-2">Details of the bank account into which the grant funding will be paid - name on account, sort code & account No.</p>
   <input type="text" name="bankName" placeholder="Name on Account" class="w-full p-2 border rounded mb-2" required />
   <input type="text" name="sortCode" placeholder="Sort Code" class="w-full p-2 border rounded mb-2" required />
   <input type="text" name="accountNumber" placeholder="Account Number" class="w-full p-2 border rounded" required />
