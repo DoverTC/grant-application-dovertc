@@ -185,24 +185,59 @@ container.appendChild(div); } </script>
 </script>
 <script>
   document.getElementById("grantForm").addEventListener("submit", function (e) {
-    e.preventDefault(); // stop actual submit
+    e.preventDefault();
 
     if (!this.checkValidity()) {
-      this.reportValidity(); // show built-in browser validation
+      this.reportValidity();
       return;
     }
 
-    // Collect key data for DocuSign URL
-    const fullName = encodeURIComponent(this.fullName.value);
-    const email = encodeURIComponent(this.contactEmail.value);
+    const baseUrl = "https://app-eu.boldsign.com/document/sign-bulk-links/?documentId=1a664447-82c6-499e-a761-edb80e62673es_b7jOz";
+    const params = new URLSearchParams();
 
-    // Replace with your actual DocuSign PowerForm URL
-    const docusignURL = `https://powerform.docusign.net/xyz123?FullName=${fullName}&Email=${email}`;
-    
-    window.location.href = docusignURL;
+    // Signer info
+    params.set("DeclaringName", this.contactName.value.trim());
+    params.set("Applicant_signerEmail", this.contactEmail.value.trim());
+
+    // Prefill fields
+    params.set("ApplicantName", this.fullName.value.trim());
+    params.set("ApplicantOrganisation", this.organisation.value.trim());
+    params.set("ApplicationAddress", this.address.value.trim());
+    params.set("CharityNumber", this.charityNumber.value.trim());
+    params.set("ProjectDescription", this.projectDescription.value.trim());
+    params.set("BudgetListTotal", this.totalRequested.value.trim());
+
+    const eventCombo = `${this.eventDate.value.trim()} at ${this.eventLocation.value.trim()}`;
+    params.set("EventDateLocations", eventCombo);
+
+    params.set("CommunityBenefit", this.communityBenefit.value.trim());
+    params.set("BeneCount", this.beneficiariesCount.value.trim());
+    params.set("BeneCountDescription", this.beneficiariesMethod.value.trim());
+
+    params.set("ContactName", this.contactName.value.trim());
+    params.set("ContactEmail", this.contactEmail.value.trim());
+    params.set("ContactTelephone", this.contactPhone.value.trim());
+
+    params.set("PaymentAccountName", this.bankName.value.trim());
+    params.set("PaymentSortCode", this.sortCode.value.trim());
+    params.set("PaymentAccountNumber", this.accountNumber.value.trim());
+
+    params.set("CouncillorPrimary", this.councillor1.value.trim());
+    params.set("CouncillorSecondary", this.councillor2.value.trim());
+
+    // Combine budget items
+    const budgetLines = [];
+    document.querySelectorAll("#budgetItems > div").forEach(div => {
+      const desc = div.querySelector('input[type="text"]').value.trim();
+      const cost = div.querySelector('input[type="number"]').value.trim();
+      if (desc && cost) budgetLines.push(`${desc} (£${cost})`);
+    });
+    params.set("BudgetListCombined", budgetLines.join("; "));
+
+    // Redirect to BoldSign
+    window.location.href = `${baseUrl}&${params.toString()}`;
   });
 </script>
-
 
 </body> 
 </html>
