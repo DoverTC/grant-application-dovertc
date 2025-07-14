@@ -10,39 +10,39 @@
 <form id="grantForm">
 <!-- Section A -->
 <div class="mb-6">
-  <h2 class="text-xl font-semibold mb-2">Section A: Date of Application</h2>
+  <h2 class="text-xl font-semibold mb-2">A: Date of Application</h2>
   <p class="text-sm text-gray-600 mb-2">Date this application was written and signed.</p>
   <input type="date" name="applicationDate" class="w-full p-2 border rounded" required />
 </div>
 
 <!-- Section B -->
 <div class="mb-6">
-  <h2 class="text-xl font-semibold mb-2">Section B: Applicant Details</h2>
+  <h2 class="text-xl font-semibold mb-2">B: Applicant Details</h2>
   <p class="text-sm text-gray-600 mb-2">Enter the name, address, and organisation applying for this funding.</p>
-  <input type="text" name="fullName" placeholder="Full Name" class="w-full p-2 border rounded mb-2" required />
-  <input type="text" name="address" placeholder="Address" class="w-full p-2 border rounded mb-2" required />
+  <!--<input type="text" name="fullName" placeholder="Full Name" class="w-full p-2 border rounded mb-2" required />-->
   <input type="text" name="organisation" placeholder="Organisation Name" class="w-full p-2 border rounded" required />
-</div>
+  <input type="text" name="address" placeholder="Address or location of event project or organisation" class="w-full p-2 border rounded mb-2" required />
+  </div>
 
 <!-- Section C -->
 <div class="mb-6">
-  <h2 class="text-xl font-semibold mb-2">Section C: Charity Number</h2>
+  <h2 class="text-xl font-semibold mb-2">C: Charity Number</h2>
   <p class="text-sm text-gray-600 mb-2">Enter your charity number if applicable. Company number is not required.</p>
   <input type="text" name="charityNumber" placeholder="Charity Number (if applicable)" class="w-full p-2 border rounded" />
 </div>
 
 <!-- Section D -->
 <div class="mb-6">
-  <h2 class="text-xl font-semibold mb-2">Section D: Project Description</h2>
+  <h2 class="text-xl font-semibold mb-2">D: Project Description</h2>
   <p class="text-sm text-gray-600 mb-2">Tell us about the project/event/activity which this funding will make possible (up to 500 words).</p>
   <textarea name="projectDescription" rows="5" class="w-full p-2 border rounded" required></textarea>
 </div>
 
 <!-- Section E -->
 <div class="mb-6">
-  <h2 class="text-xl font-semibold mb-2">Section E: List what you will spend the funding on.</h2>
+  <h2 class="text-xl font-semibold mb-2">E: List what you will spend the funding on.</h2>
   <p class="text-sm text-gray-600 mb-2">List in detail what you will spend the money on. Please put cost against each item (up to 500 words). 
-Give a total  (up to £500) for how much funding you are applying for.</p>
+Give a total  (up to £500) for how much funding you are applying for. If the funding is only for part of an item then please state percentage funded e.g. 50% laptop or 35% of Hire of Hall.</p>
   <div id="budgetItems" class="space-y-2 mb-2"></div>
   <button type="button" onclick="addBudgetItem()" class="mb-4 px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700">+ Add Item</button>
   <input type="number" name="totalRequested" placeholder="Total Funding Requested (£)" class="w-full p-2 border rounded" required />
@@ -50,30 +50,30 @@ Give a total  (up to £500) for how much funding you are applying for.</p>
 
 <!-- Section F -->
 <div class="mb-6">
-  <h2 class="text-xl font-semibold mb-2">Section F: Event Details</h2>
-  <p class="text-sm text-gray-600 mb-2">Enter the date(s) and location of your event/project/activity including postcode.</p>
+  <h2 class="text-xl font-semibold mb-2">F: Event Details</h2>
+  <p class="text-sm text-gray-600 mb-2">Enter the date(s) when and where will the project or event be taking place or when will you spend the funding by. Please include postcodes if applicable.</p>
   <input type="text" name="eventDate" placeholder="Date or dates" class="w-full p-2 border rounded mb-2" required />
   <input type="text" name="eventLocation" placeholder="Location and postcode" class="w-full p-2 border rounded" required />
 </div>
 
 <!-- Section G -->
 <div class="mb-6">
-  <h2 class="text-xl font-semibold mb-2">Section G: Community Benefit</h2>
+  <h2 class="text-xl font-semibold mb-2">G: Community Benefit</h2>
   <p class="text-sm text-gray-600 mb-2">How will your event/project/activity benefit people who live or work in the THE TOWN OF DOVER (see map in guidance)</p>
   <textarea name="communityBenefit" rows="4" class="w-full p-2 border rounded" required></textarea>
 </div>
 
 <!-- Section H -->
 <div class="mb-6">
-  <h2 class="text-xl font-semibold mb-2">Section H: Beneficiaries</h2>
-  <p class="text-sm text-gray-600 mb-2">How many residents of Dover will benefit from this grant funding and how will you count them?</p>
+  <h2 class="text-xl font-semibold mb-2">H: How many residents of Dover will benefit from this grant funding and how will you count them? </h2>
+  <p class="text-sm text-gray-600 mb-2"></p>
   <input type="number" name="beneficiariesCount" placeholder="Estimated number of beneficiaries" class="w-full p-2 border rounded mb-2" required />
   <textarea name="beneficiariesMethod" rows="3" class="w-full p-2 border rounded" placeholder="How will you count/estimate?" required></textarea>
 </div>
 
 <!-- Section I -->
 <div class="mb-6">
-  <h2 class="text-xl font-semibold mb-2">Section I: Contact Information</h2>
+  <h2 class="text-xl font-semibold mb-2">I: Contact Information</h2>
   <p class="text-sm text-gray-600 mb-2">Name, Tel no & email address of the person who is completing this application. You will be contacted if there are any questions and notified whether the application has been successful.</p>
   <input type="text" name="contactName" placeholder="Your Name" class="w-full p-2 border rounded mb-2" required />
   <input type="tel" name="contactPhone" placeholder="Telephone Number" class="w-full p-2 border rounded mb-2" required />
@@ -82,7 +82,7 @@ Give a total  (up to £500) for how much funding you are applying for.</p>
 
 <!-- Section J -->
 <div class="mb-6">
-  <h2 class="text-xl font-semibold mb-2">Section J: Bank Details</h2>
+  <h2 class="text-xl font-semibold mb-2">J: Bank Details</h2>
   <p class="text-sm text-gray-600 mb-2">Details of the bank account into which the grant funding will be paid - name on account, sort code & account No.</p>
   <input type="text" name="bankName" placeholder="Name on Account" class="w-full p-2 border rounded mb-2" required />
   <input type="text" name="sortCode" placeholder="Sort Code" class="w-full p-2 border rounded mb-2" required />
@@ -91,23 +91,23 @@ Give a total  (up to £500) for how much funding you are applying for.</p>
 
 <!-- Section K -->
 <div class="mb-6">
-  <h2 class="text-xl font-semibold mb-2">Section K: Supporting Signatures</h2>
-  <p class="text-sm text-gray-600 mb-2">Please name two Dover Town Councillors who support this application. Signatures will be collected separately.</p>
+  <h2 class="text-xl font-semibold mb-2">K: Supporting Signatures</h2>
+  <p class="text-sm text-gray-600 mb-2">Please name two Dover Town Councillors who have agreed to support this application. Do not submit an application without councillors agreement. Signatures will be collected separately.</p>
   <input type="text" name="councillor1" placeholder="Name of Dover Town Councillor 1" class="w-full p-2 border rounded mb-2" required />
   <input type="text" name="councillor2" placeholder="Name of Dover Town Councillor 2" class="w-full p-2 border rounded mb-2" required />
 </div>
 
 <!-- Section L -->
 <div class="mb-6">
-  <h2 class="text-xl font-semibold mb-2">Section L: Declaration</h2>
+  <h2 class="text-xl font-semibold mb-2">L: Declaration</h2>
   <p class="text-sm text-gray-600 mb-4">Please confirm the following before submission: I declare that, </p>
   <input type="text" name="declarationName" placeholder="Full name of the person declaring" class="w-full p-2 border rounded mb-4" required />
   <ul class="list-disc list-inside text-sm text-gray-700 space-y-2 mb-4">
     <li>The information in this application is true in all sections of this form.</li>
     <li>I am authorised to apply for this grant funding on behalf of the organisation named on this form.</li>
-    <li>Funding is not being provided from any other source (please see guidance on and including income, government funding, or other grants) for the items listed in Section E.</li>
+    <li>To ensure there is no duplication of funding, the item(s) listed in Section E are not being supported by any other funding source. This application provides the sole and exclusive funding for these items.</li>
     <li>I will ensure Dover Town Council’s contribution is publicised by the organisation (e.g., via social media, printed materials, radio/TV, or word-of-mouth).</li>
-    <li>I understand that if the funding is not used on the agreed items/event/project, or receipts are not provided, or if the application is found to be fraudulent, then I and the trustees/directors/committee members will be liable to repay the funding to Dover Town Council on demand.</li>
+    <li>I understand that if the funding is not used on the agreed items/event/project, or receipts are not provided, or if the application is found to be fraudulent, then I and the trustees/directors/committee members will be liable to repay the funding to Dover Town Council.</li>
   </ul>
   <input type="date" name="declarationDate" class="w-full p-2 border rounded mb-4" required />
 </div>
