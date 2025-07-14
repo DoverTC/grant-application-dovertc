@@ -6,8 +6,10 @@
     </head> 
     <body class="bg-gray-100 py-10 px-4"> 
         <div class="max-w-3xl mx-auto bg-white p-8 rounded shadow">
-<img class="h-auto max-h-xs justify-center" src="https://dovertowncouncil.gov.uk/wp-content/uploads/2025/07/1.png" alt="Dover Town Council Crest Logo">
-            <h1 class="text-3xl font-bold mb-6 justify-center">Dover Town Council Micro Grant Application</h1>
+            <div class="text-center">
+<img class="h-auto max-h-xs" src="https://dovertowncouncil.gov.uk/wp-content/uploads/2025/07/1.png" alt="Dover Town Council Crest Logo">
+            <h1 class="text-3xl font-bold mb-6">Dover Town Council Micro Grant Application</h1>
+                </div>
 <form id="grantForm">
 <!-- Section A -->
 <div class="mb-6">
@@ -124,7 +126,9 @@ Give a total  (up to £500) for how much funding you are applying for. If the fu
 </div>
 </form>
 
-</div> <script> function addBudgetItem() { const container = document.getElementById('budgetItems'); 
+</div> 
+
+<script> function addBudgetItem() { const container = document.getElementById('budgetItems'); 
 const div = document.createElement('div'); 
 div.className = 'flex gap-2 items-center mb-2'; 
 div.innerHTML = ` <input type="text" name="budgetItemDescription[]" placeholder="Item description" class="flex-1 p-2 border rounded" required /> <input type="number" name="budgetItemCost[]" placeholder="Cost" class="w-32 p-2 border rounded" required /> <button type="button" onclick="this.parentElement.remove()" class="text-red-600 text-xl font-bold hover:text-red-800">&times;</button> `; 
